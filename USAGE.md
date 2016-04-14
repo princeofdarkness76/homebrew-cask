@@ -100,7 +100,7 @@ $ brew install homebrew/completions/brew-cask-completion
 For `zsh` completion support, simply run:
 
 ```bash
-$ brew install `zsh-completions`
+$ brew install zsh-completions
 ```
 
 ## Inspecting Installed Casks
@@ -145,11 +145,9 @@ The primary Homebrew-Cask Tap includes most of the Casks that a typical user wil
 
 | Tap name | description |
 | -------- | ----------- |
-| [caskroom/versions](https://github.com/caskroom/homebrew-versions)     | contains alternate versions of Casks (e.g. betas, nightly releases, old versions)
-| [caskroom/fonts](https://github.com/caskroom/homebrew-fonts)           | contains Casks that install fonts, which are kept separate so we can educate users about the different licensing landscape around font installation/usage
-| [caskroom/unofficial](https://github.com/caskroom/homebrew-unofficial) | contains Casks that install unofficial builds or forks
-
-There are also [alternate Cask Taps](doc/alternate_cask_taps.md#alternate-cask-taps-maintained-by-users) maintained by users.
+| [caskroom/versions](https://github.com/caskroom/homebrew-versions) | contains alternate versions of Casks (e.g. betas, nightly releases, old versions)
+| [caskroom/fonts](https://github.com/caskroom/homebrew-fonts)       | contains Casks that install fonts, which are kept separate so we can educate users about the different licensing landscape around font installation/usage
+| [caskroom/eid](https://github.com/caskroom/homebrew-eid)           | contains Casks that install electronic identity card software of various countries
 
 You can tap any of the above with a `brew tap` command:
 

@@ -1,10 +1,10 @@
 cask 'the-hit-list' do
-  version '1.1.17'
-  sha256 '0a6bd16d26c19a27f2146cdba27fc5c8119da8c382643d285203b41fadaebe98'
+  version '1.1.19,308'
+  sha256 'cc244128df45759cb1306448405cbcd0c0b153292cecda4326230881546eab94'
 
-  url 'http://distrib.karelia.com/downloads/TheHitList-302.zip'
+  url "https://distrib.karelia.com/downloads/TheHitList-#{version.after_comma}.zip"
   appcast 'https://launch.karelia.com/appcast.php?product=9&appname=The+Hit+List',
-          :sha256 => 'd34151b1e3f683b4d20c74ea1aa19539c607eeb529a3d137e42a8f63525447c4'
+          checkpoint: '727a25533a0a315b6f77e6b1f7f1a3692d5914712ff6eb04727f086460c8e25b'
   name 'The Hit List'
   homepage 'https://www.karelia.com/products/the-hit-list/mac.html'
   license :commercial

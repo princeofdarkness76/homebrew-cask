@@ -1,11 +1,11 @@
 cask 'wordcounter' do
-  version '1.3.3'
-  sha256 '68219430aef534160b3c9264778bcac04c78a6ffe3c30c06a1f0ebfe622d034a'
+  version '1.3.5'
+  sha256 '01ef9d7e8edf73d1279e124d6a62bdda4b86c166ccc279de8bac060c386ad3f5'
 
-  # amazonaws.com is the official download host per the vendor homepage
+  # amazonaws.com/wordcounterapp was verified as official when first introduced to the cask
   url "https://s3.amazonaws.com/wordcounterapp/WordCounter-v#{version}.zip"
   appcast "https://update.christiantietze.de/wordcounter/v#{version.major}/beta.xml",
-          :sha256 => '96b36ea1ddf1b899710c77a2d5d2ad6ce5b0943aa1cbc4f92f00a8b350f95b6a'
+          checkpoint: '5954d7e5f01c1e966b19997613f0172f47f1b780f3045ddc0df673f3ab6c3b70'
   name 'WordCounter'
   homepage 'http://wordcounterapp.com/'
   license :commercial

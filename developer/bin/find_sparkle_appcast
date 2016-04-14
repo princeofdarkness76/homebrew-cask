@@ -1,11 +1,6 @@
 #!/bin/bash
-#
-# find_sparkle_appcast
-#
 
-###
-### functions
-###
+readonly browser_headers=(--header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36')
 
 usage() {
   local program exit_status
@@ -24,7 +19,7 @@ absolute_path() {
 appcast_found_error() {
   local error_reason="$1"
 
-  echo "An appcast was found, but it ${error_reason}. You should:
+  echo "An appcast was found pointing to ${appcast_url}, but it ${error_reason}. You should:
 
   1. Check your internet connection.
   2. Try again later.
@@ -32,10 +27,6 @@ appcast_found_error() {
 
   exit 1
 }
-
-###
-### main
-###
 
 # exit if no argument (or more than one) was given
 if [[ -z "$1" ]] || [[ -n "$2" ]]; then
@@ -59,18 +50,18 @@ if [[ -z "${appcast_url}" ]]; then
   exit 0
 fi
 
-# vaidate appcast
-appcast_http_response="$(curl --silent --head --write-out '%{http_code}' "${appcast_url}" -o /dev/null)"
+# validate appcast
+appcast_http_response="$(curl --silent --head "${browser_headers[@]}" --write-out '%{http_code}' "${appcast_url}" -o /dev/null)"
 [[ "${appcast_http_response}" != '200' ]] && appcast_found_error "returned a non-200 (OK) HTTP response code (${appcast_http_response})"
 
-appcast_sha=$(curl --silent "${appcast_url}" | shasum --algorithm 256 | awk '{ print $1 }')
-[[ "${appcast_sha}" == 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855' ]] && appcast_found_error 'seems to be empty'
+appcast_checkpoint=$(curl --silent --compressed --location "${browser_headers[@]}" "${appcast_url}" | sed 's|<pubDate>[^<]*</pubDate>||g' | shasum --algorithm 256 | awk '{ print $1 }')
+[[ "${appcast_checkpoint}" == 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855' ]] && appcast_found_error 'seems to be empty'
 
 # output appcast
-echo "A Sparkle appcast was found. You sould add it to your cask as
+echo "A Sparkle appcast was found. You should add it to your cask as
 
-appcast '${appcast_url}',
-        :sha256 => '${appcast_sha}'
+  appcast '${appcast_url}',
+          checkpoint: '${appcast_checkpoint}'
 
 You should likely also add 'auto_updates true'"
 

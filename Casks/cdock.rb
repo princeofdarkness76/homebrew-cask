@@ -1,16 +1,17 @@
 cask 'cdock' do
-  version '0.9.11'
-  sha256 'da1657f0c92dac0b3d12c129f420b53471231da180d2ef2b6019ce5665f91b18'
+  version '0.10.3'
+  sha256 '2e54c96e1a7c61414454171f09c3d0c2c59451bdcb917dcf1cd31f0ce3ee772d'
 
+  # github.com/w0lfschild/cDock2 was verified as official when first introduced to the cask
   url "https://github.com/w0lfschild/cDock2/releases/download/v#{version}/cDock.zip"
   appcast 'https://github.com/w0lfschild/cDock2/releases.atom',
-          :sha256 => '8b23380512d766d9773b145642876ab353987f2efe47efa2b42168ba7154aab3'
+          checkpoint: '152818010dd4d1f3c7988a188841ddb9ae4db143616ef504dcbd01ea340f5405'
   name 'cDock2'
   homepage 'https://w0lfschild.github.io/cdock'
   license :bsd
 
-  depends_on :cask => 'easysimbl'
-  depends_on :macos => '>= :mavericks'
+  depends_on cask: 'easysimbl'
+  depends_on macos: '>= :mavericks'
 
   app 'cDock.app'
 

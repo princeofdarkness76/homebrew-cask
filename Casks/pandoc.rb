@@ -1,18 +1,18 @@
 cask 'pandoc' do
-  version '1.16-1'
-  sha256 'f9c7a5a3b31dae05ee53b1b38de8a8a7ea741d50becbafcf2fba9b140fcba036'
+  version '1.17.0.2'
+  sha256 '79aa0bdbcc5df8c87041a5497f1dc090ea6d993a9788f650d53abf96c68228bd'
 
   # github.com is the official download host per the vendor homepage
-  url "https://github.com/jgm/pandoc/releases/download/#{version.major_minor}/pandoc-#{version}-osx.pkg"
+  url "https://github.com/jgm/pandoc/releases/download/#{version}/pandoc-#{version}-osx.pkg"
   appcast 'https://github.com/jgm/pandoc/releases.atom',
-          :sha256 => '4c31cd4d0b9cb39fac7c6fa9d4a3d5ee99e622a84097cd9d57d7f3130241bf00'
+          checkpoint: '2b4cb56d54977995bf215de6b8caf7964b9d5dbbeb79ef19c971e398e345b49b'
   name 'Pandoc'
   homepage 'http://pandoc.org/'
   license :gpl
 
-  conflicts_with :formula => 'pandoc'
+  conflicts_with formula: 'pandoc'
 
   pkg "pandoc-#{version}-osx.pkg"
 
-  uninstall :pkgutil => 'net.johnmacfarlane.pandoc'
+  uninstall pkgutil: 'net.johnmacfarlane.pandoc'
 end

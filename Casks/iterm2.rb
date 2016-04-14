@@ -5,14 +5,16 @@ cask 'iterm2' do
 
   url "https://iterm2.com/downloads/stable/iTerm2-#{version.gsub('.', '_')}.zip"
   appcast 'https://iterm2.com/appcasts/final.xml',
-          :sha256 => 'dbe44305b0b7e620fb020a60d6ca78042144a8e04b4b4f2fc3cec84e0df9fc44'
+          checkpoint: 'e9de319b2fa344a35dd297ee07cd9ea6c9d4ff93e96fece38c36409319767f55'
   name 'iTerm2'
   homepage 'https://www.iterm2.com/'
   license :gpl
 
   auto_updates true
+  depends_on macos: '>= :lion'
+  depends_on arch: :intel
 
   app 'iTerm.app'
 
-  zap :delete => '~/Library/Preferences/com.googlecode.iterm2.plist'
+  zap delete: '~/Library/Preferences/com.googlecode.iterm2.plist'
 end

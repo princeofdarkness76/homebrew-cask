@@ -1,15 +1,15 @@
 cask 'shapes' do
-  version '4.5.4'
-  sha256 'f99a11a0d98bbc07f16408659c7487d91236e65284ee579da346e9baf524ed9e'
+  version '4.6'
+  sha256 '132da27932917b01c12735c566c05ce90f810e5ae68408bcd04514a166de71dd'
 
   url "http://shapesapp.com/dist/Shapes_#{version}.zip"
   appcast 'http://shapesapp.com/appcast/shapes4.rss',
-          :sha256 => '42692fb4e5674aa6700abd915f667cb25ae15db15af6830517fa0c38018d0d9a'
+          checkpoint: 'd9fd8cc6d2650b59bf1c8220804be5e0f73e572d2d1fd958ec9418897f8f28aa'
   name 'Shapes'
   homepage 'http://shapesapp.com'
   license :commercial
 
-  depends_on :macos => '>= :mountain_lion'
+  depends_on macos: '>= :mountain_lion'
 
   app 'Shapes.app'
 end

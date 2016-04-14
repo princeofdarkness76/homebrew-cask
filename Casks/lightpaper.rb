@@ -1,14 +1,14 @@
 cask 'lightpaper' do
-  version '1.1.4'
-  sha256 '583afc22a29e0bd4f241b5476a1aec8291e35ebf080e4161b3f8552bf948f483'
+  version '1.3.1'
+  sha256 '4df2fa5a481fc7ed9e9b3afc548a78199b12c7a6006011f0642e93339d06bcc3'
 
-  # hockeyapp.net is the official download host per the vendor homepage
+  # hockeyapp.net/api/2/apps/789cfa8846464727ae0fdb176ec8d3c8 was verified as official when first introduced to the cask
   url 'https://rink.hockeyapp.net/api/2/apps/789cfa8846464727ae0fdb176ec8d3c8?format=zip'
   appcast 'https://dl.dropboxusercontent.com/u/83257/LpMacUpdates/lightpaper_appcast.xml',
-          :sha256 => 'a55a5acea12fcac860027f454defa85e4ce5146216eff4c5c2d7769e8c6399fb'
+          checkpoint: '82bbbb41cd12179fd15583927586a2a4a60d0237be095f30c795aad9a7aa85cd'
   name 'LightPaper'
-  homepage 'http://www.ashokgelal.com/lightpaper-for-mac/'
-  license :gratis
+  homepage 'http://lightpaper.42squares.in/'
+  license :commercial
 
   app 'LightPaper.app'
 end

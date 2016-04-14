@@ -8,8 +8,8 @@ cask 'omnigraffle' do
     sha256 'a2eff19909d1ba38a4f01b2beecbde2f31f4af43d30e06d2c6921ae8880f85bc'
     url "http://www.omnigroup.com/ftp1/pub/software/MacOSX/10.8/OmniGraffle-#{version}.dmg"
   else
-    version '6.4.1'
-    sha256 '8f1c052e7100baca7a7cda3b5c09f7d3ab0ade7006d32fc193e97a95dee45f79'
+    version '6.5.2'
+    sha256 '0696232cd0ad3d8183ae2a452ca00b399994a89011afa7f63d229562292376b5'
     url "http://www.omnigroup.com/ftp1/pub/software/MacOSX/10.10/OmniGraffle-#{version}.dmg"
   end
 
@@ -19,5 +19,5 @@ cask 'omnigraffle' do
 
   app 'OmniGraffle.app'
 
-  zap :delete => '~/Library/Application Support/The Omni Group/OmniGraffle'
+  zap delete: '~/Library/Application Support/The Omni Group/OmniGraffle'
 end

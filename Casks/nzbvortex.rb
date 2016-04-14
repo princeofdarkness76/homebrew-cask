@@ -1,13 +1,13 @@
 cask 'nzbvortex' do
-  version :latest
-  sha256 :no_check
+  version '3.3.1'
+  sha256 '0672c76892b91a78dd77e06f2f624a9fbee5d4528316165cc377cfacab06fa72'
 
-  url 'http://www.nzbvortex.com/downloads/NZBVortex.dmg'
-  appcast 'http://www.nzbvortex.com/update/appcast.xml',
-          :sha256 => 'f91b5f3874597a1c67b10c714b2e726e8f649e8fa6da95af66ef4b5dbd668d13'
+  url "http://www.nzbvortex.com/downloads/NZBVortex-#{version}.zip"
+  appcast "https://www.nzbvortex.com/update/appcast_v#{version.major}.xml",
+          checkpoint: '8c8ce02577fabbf99446c6076cea122a978a12425044a9695773e35cb02a4c9a'
   name 'NZBVortex'
   homepage 'http://www.nzbvortex.com/'
   license :commercial
 
-  app 'NZBVortex 3.app'
+  app "NZBVortex #{version.major}.app"
 end

@@ -17,7 +17,7 @@ cask 'deeper' do
   elsif MacOS.release == :yosemite
     url 'http://www.titanium.free.fr/download/1010/Deeper.dmg'
   elsif MacOS.release == :el_capitan
-    # pagesperso-orange.fr is the official download host per the vendor homepage
+    # joel.barriere.pagesperso-orange.fr was verified as official when first introduced to the cask
     url 'http://joel.barriere.pagesperso-orange.fr/download/1011/Deeper.dmg'
   else
     # Unusual case: there is no fall-through.  The software will stop
@@ -28,16 +28,16 @@ cask 'deeper' do
   homepage 'http://www.titanium.free.fr/deeper.html'
   license :gratis
 
-  depends_on :macos => %w[
-                         :tiger
-                         :leopard
-                         :snow_leopard
-                         :lion
-                         :mountain_lion
-                         :mavericks
-                         :yosemite
-                         :el_capitan
-                       ]
+  depends_on macos: %w[
+                      :tiger
+                      :leopard
+                      :snow_leopard
+                      :lion
+                      :mountain_lion
+                      :mavericks
+                      :yosemite
+                      :el_capitan
+                    ]
 
   app 'Deeper.app'
 

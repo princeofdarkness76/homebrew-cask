@@ -1,10 +1,10 @@
 cask 'wordpresscom' do
-  version '1.2.1'
-  sha256 '1a10ba45287e6e3a6cc2c128aed4358e7e6efb1a624f80f6b9fd0cc71528489b'
+  version '1.2.7'
+  sha256 'a7f833fee1385746eab108c58b44ff7b44a20d0cfbaf0f8ac006b420b74166a9'
 
-  url 'https://public-api.wordpress.com/rest/v1.1/desktop/osx/download?type=dmg'
-  appcast 'https://github.com/Automattic/wp-desktop/releases.atom',
-          :sha256 => '3c4d547cc3243b6410a369c8b9fe20e481157d55c6703e87ac526456c7afba6d'
+  url "https://public-api.wordpress.com/rest/v1.1/desktop/osx/download?type=app&ref=update&version=#{version}"
+  appcast 'https://public-api.wordpress.com/rest/v1.1/desktop/osx/version?compare=0.1.0&channel=stable',
+          checkpoint: 'b844f8153ce9bfff987d870b4864155a201f266dbf27fee00e61ca87a9ac3655'
   name 'WordPress.com'
   homepage 'https://desktop.wordpress.com/'
   license :gpl

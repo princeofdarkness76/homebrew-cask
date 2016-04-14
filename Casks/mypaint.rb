@@ -4,11 +4,13 @@ cask 'mypaint' do
 
   # dropbox.com is the official download host per the vendor homepage.
   url "https://dl.dropbox.com/u/942685/MyPaint-#{version}.pkg"
+  appcast 'https://github.com/mypaint/mypaint/releases.atom',
+          checkpoint: 'f344a1ee81f291f406c2b394369435653b52fa20417760edf6b549f3b71a3602'
   name 'MyPaint'
   homepage 'http://mypaint.intilinux.com'
   license :gpl
 
   pkg "MyPaint-#{version}.pkg"
 
-  uninstall :pkgutil => 'com.mypaint.*'
+  uninstall pkgutil: 'com.mypaint.*'
 end

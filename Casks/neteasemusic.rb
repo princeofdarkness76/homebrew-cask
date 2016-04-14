@@ -1,6 +1,6 @@
 cask 'neteasemusic' do
-  version '1.4.0_418'
-  sha256 'da5e545bbe213a7f073602519da29c3d4d68bb25de99804c4dd61dd6d02dc763'
+  version '1.4.2_444'
+  sha256 'cf05f5225ca91d5d7f0e1f0fe37e1e37c4c92963f8d5ee0ba71a3ad7727bbc59'
 
   # 126.net is the official download host per the vendor homepage
   url "http://s1.music.126.net/download/osx/NeteaseMusic_#{version}_web.dmg"
@@ -11,12 +11,12 @@ cask 'neteasemusic' do
 
   app 'NeteaseMusic.app'
 
-  uninstall :quit => 'com.netease.163music'
+  uninstall quit: 'com.netease.163music'
 
-  zap :delete => [
-                   '~/Library/Caches/com.netease.163music',
-                   '~/Library/Containers/com.netease.163music',
-                   '~/Library/Preferences/com.netease.163music.plist',
-                   '~/Library/Saved Application State/com.netease.163music.savedState',
-                 ]
+  zap delete: [
+                '~/Library/Caches/com.netease.163music',
+                '~/Library/Containers/com.netease.163music',
+                '~/Library/Preferences/com.netease.163music.plist',
+                '~/Library/Saved Application State/com.netease.163music.savedState',
+              ]
 end

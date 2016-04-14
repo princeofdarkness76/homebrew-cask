@@ -90,15 +90,15 @@ class Hbc::Audit
   def check_appcast
     return unless cask.appcast
     odebug 'Auditing appcast'
-    check_appcast_has_sha256
-    return unless cask.appcast.sha256
-    check_sha256_actually_256(sha256: cask.appcast.sha256, stanza: 'appcast :sha256')
-    check_sha256_invalid(sha256: cask.appcast.sha256, stanza: 'appcast :sha256')
+    check_appcast_has_checkpoint
+    return unless cask.appcast.checkpoint
+    check_sha256_actually_256(sha256: cask.appcast.checkpoint, stanza: 'appcast :checkpoint')
+    check_sha256_invalid(sha256: cask.appcast.checkpoint, stanza: 'appcast :checkpoint')
   end
 
-  def check_appcast_has_sha256
+  def check_appcast_has_checkpoint
     odebug 'Verifying appcast has :sha256 key'
-    add_error 'a sha256 is required for appcast' unless cask.appcast.sha256
+    add_error 'a checkpoint sha256 is required for appcast' unless cask.appcast.checkpoint
   end
 
   def check_url
@@ -109,9 +109,9 @@ class Hbc::Audit
   def check_download_url_format
     odebug "Auditing URL format"
     if bad_sourceforge_url?
-      add_warning "SourceForge URL format incorrect. See https://github.com/caskroom/homebrew-cask/blob/master/CONTRIBUTING.md#sourceforgeosdn-urls"
+      add_warning "SourceForge URL format incorrect. See https://github.com/caskroom/homebrew-cask/blob/master/doc/cask_language_reference/stanzas/url.md#sourceforgeosdn-urls"
     elsif bad_osdn_url?
-      add_warning "OSDN URL format incorrect. See https://github.com/caskroom/homebrew-cask/blob/master/CONTRIBUTING.md#sourceforgeosdn-urls"
+      add_warning "OSDN URL format incorrect. See https://github.com/caskroom/homebrew-cask/blob/master/doc/cask_language_reference/stanzas/url.md#sourceforgeosdn-urls"
     end
   end
 

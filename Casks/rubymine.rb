@@ -1,20 +1,20 @@
 cask 'rubymine' do
-  version '8.0.3'
-  sha256 'b1e6a328ac9f97224df6d71fb8cf20fc92df6fb1579f008be8611dc97c51a2a3'
+  version '2016.1'
+  sha256 'c587ec3e282802c93be5826be79fddb003a6842b861f5c9a885c6c0c9638106d'
 
-  url "https://download.jetbrains.com/ruby/RubyMine-#{version}-custom-jdk-bundled.dmg"
+  url "https://download.jetbrains.com/ruby/RubyMine-#{version}.dmg"
   name 'RubyMine'
   homepage 'https://www.jetbrains.com/ruby/'
   license :commercial
 
   app 'RubyMine.app'
 
-  zap :delete => [
-                   "~/Library/Application Support/RubyMine#{version.delete('.')}",
-                   "~/Library/Preferences/RubyMine#{version.delete('.')}",
-                 ]
-
-  caveats do
-    depends_on_java
-  end
+  zap delete: [
+                "~/Library/Application Support/RubyMine#{version.major_minor.no_dots}",
+                "~/Library/Preferences/RubyMine#{version.major_minor.no_dots}",
+                "~/.RubyMine#{version.major_minor.no_dots}",
+                '~/Library/Preferences/com.jetbrains.RubyMine.plist',
+                "~/Library/Caches/RubyMine#{version.major_minor.no_dots}",
+                "~/Library/Logs/RubyMine#{version.major_minor.no_dots}",
+              ]
 end

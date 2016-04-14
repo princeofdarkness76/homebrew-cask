@@ -1,10 +1,10 @@
 cask 'iphoto-library-manager' do
-  version '4.2.3'
-  sha256 '4f7a45fefefa8fdf5c498422091c3ed150d436e01b4b8127569f652e5d5503ff'
+  version '4.2.4'
+  sha256 '4710def2d0a3f91152c08b128d03b38207455e43ff36fd5d337758cbeaa64309'
 
   url 'http://www.fatcatsoftware.com/iplm/iPhotoLibraryManager.zip'
   appcast 'http://www.fatcatsoftware.com/iplm/iplm4_appcast.xml',
-          :sha256 => 'dbf62877f3503a9362a1628f878057f5d1d78d100d21a00ac23888b563910d38'
+          checkpoint: 'd1a4cdb9ec10226113286433595506743481a2fb1d95bd3bb89256143d7dc2fd'
   name 'iPhoto Library Manager'
   homepage 'http://www.fatcatsoftware.com/iplm/'
   license :commercial

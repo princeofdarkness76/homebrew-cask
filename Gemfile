@@ -8,8 +8,8 @@ group :debug do
 end
 
 group :development do
-  gem 'rubocop', github: 'bbatsov/rubocop', branch: 'master'
-  gem 'rubocop-cask', '~> 0.3'
+  gem 'rubocop', '~> 0.37.0'
+  gem 'rubocop-cask', '~> 0.5.0'
 end
 
 group :release do

@@ -8,11 +8,11 @@ cask 'coconutbattery' do
     sha256 'fcfc81214ff26afff9f5c6c7cdc455b23ac898b6918f864b641a9e31526692d4'
     url "https://www.coconut-flavour.com/downloads/coconutBattery_#{version}.zip"
   else
-    version '3.2.1'
-    sha256 'b403fb2cb79e487192d8754e5c5fd3df3b47bc39a85b5c834305a9029490e749'
-    url "https://www.coconut-flavour.com/downloads/coconutBattery_#{version.gsub('.', '_')}.zip"
+    version '3.3.2'
+    sha256 '4fe384cfa5434c8858bebc298479897d7e82d68efd400a46a780a39c4319797f'
+    url "https://www.coconut-flavour.com/downloads/coconutBattery_#{version.dots_to_underscores}.zip"
     appcast 'http://updates.coconut-flavour.com/coconutBatteryIntel.xml',
-            :sha256 => '382587021d294ea5b6e3bab40b87c6ca7e98592d250527a035ba8a1bee2188f3'
+            checkpoint: 'c1b2a07d7602375db035d47c078ec4a02173605834c37786c779e1bd15924138'
   end
 
   name 'coconutBattery'
@@ -20,4 +20,11 @@ cask 'coconutbattery' do
   license :bsd
 
   app 'coconutBattery.app'
+
+  zap delete: [
+                '~/Library/Application Support/coconutBattery',
+                '~/Library/Caches/com.coconut-flavour.coconutBattery',
+                '~/Library/Preferences/com.coconut-flavour.coconutBattery.plist',
+                '~/Library/Saved Application State/com.coconut-flavour.coconutBattery.savedState',
+              ]
 end

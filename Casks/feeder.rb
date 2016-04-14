@@ -1,10 +1,10 @@
 cask 'feeder' do
-  version '3.1.4'
-  sha256 '925cbf17149dc84632be10a142a0f238231ce72d8736528a872c9d44f47e451d'
+  version '3.1.8'
+  sha256 '173f91170652a7296adb51deccc5aa7e305856aec9012e5ed81c8431850e92c4'
 
   url "https://reinventedsoftware.com/feeder/downloads/Feeder_#{version}.dmg"
   appcast 'https://reinventedsoftware.com/feeder/downloads/Feeder3.xml',
-          :sha256 => '4daf79a0cb6b322065af5776464cb1d034561cfde3d6d7e482b90b968ad33fd4'
+          checkpoint: 'ba6194da9ef1e3e3ee1de3e3f9b11dbae06663040c6869dc8c04d2174dca1bad'
   name 'Feeder'
   homepage 'https://reinventedsoftware.com/feeder/'
   license :commercial

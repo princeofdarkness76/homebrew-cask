@@ -1,10 +1,10 @@
 cask 'amethyst' do
-  version '0.9.10'
-  sha256 '82adf42ce6031ab59a3072e607788e73f594ad5f21c7118aabc6c5dafe3d0b47'
+  version '0.10'
+  sha256 'e154fd5cea7430d3d98c21d3e1f820812c0cb8e0345d49e8823fb5f784dba33c'
 
   url "https://ianyh.com/amethyst/versions/Amethyst-#{version}.zip"
   appcast 'https://ianyh.com/amethyst/appcast.xml',
-          :sha256 => '6290a2d45067fcce7ce69b24c39367cbd00d10993ff3e980aec5b048fc6b52d8'
+          checkpoint: 'd49ecc458c9c5528022f51c661da5d1fbad9699c30365552bde6e96340a74db6'
   name 'Amethyst'
   homepage 'https://ianyh.com/amethyst'
   license :mit
@@ -13,12 +13,12 @@ cask 'amethyst' do
 
   app 'Amethyst.app'
 
-  uninstall  :login_item => 'Amethyst'
+  uninstall  login_item: 'Amethyst'
 
-  zap        :delete => [
-                          '~/Library/Caches/com.amethyst.Amethyst',
-                          '~/Library/Preferences/com.amethyst.Amethyst.plist',
-                          '~/Library/Cookies/com.amethyst.Amethyst.binarycookies',
-                          '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.amethyst.amethyst.sfl',
-                        ]
+  zap        delete: [
+                       '~/Library/Caches/com.amethyst.Amethyst',
+                       '~/Library/Preferences/com.amethyst.Amethyst.plist',
+                       '~/Library/Cookies/com.amethyst.Amethyst.binarycookies',
+                       '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.amethyst.amethyst.sfl',
+                     ]
 end

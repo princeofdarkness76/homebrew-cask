@@ -1,10 +1,10 @@
 cask 'blocs' do
-  version '1.5.3'
-  sha256 'd0263d88c2c17a84c431435ac1fb8f82b5ecb459b4967530a16466e1721360c5'
+  version '1.6.1'
+  sha256 '17b68735f0445c02229fd2c48f2ac16978c2c90ae78a8f0d1245842632a6538a'
 
   url 'http://blocsapp.com/trial-app/BlocsApp.zip'
   appcast 'https://uistore.io/blocs/info.xml',
-          :sha256 => 'a2f5e79a1f8f39936a6c888300c93bc6e333ba215479d18d60263e7e7c9c8711'
+          checkpoint: '0024249e69224b791941c756498b101bd2044582a8740b8689ac1a19acd35a81'
   name 'Blocs'
   homepage 'http://blocsapp.com/'
   license :commercial

@@ -1,21 +1,22 @@
 cask 'phpstorm' do
-  version '10.0.3'
-  sha256 'bd7d28974ef5587524389659dd27516c1067c35aebeee040821c638a18439e52'
+  version '2016.1'
+  sha256 'b30a67f22cfd331eec5599b4ae5957e10fb9f75b45e48a7ffd638adf77b2810d'
 
-  url "https://download.jetbrains.com/webide/PhpStorm-#{version}-custom-jdk-bundled.dmg"
+  url "https://download.jetbrains.com/webide/PhpStorm-#{version}.dmg"
   name 'PhpStorm'
   homepage 'https://www.jetbrains.com/phpstorm/'
   license :commercial
 
   app 'PhpStorm.app'
 
-  zap :delete => [
-                   '~/Library/Application Support/WebIde100',
-                   '~/Library/Preferences/WebIde100',
-                   '~/Library/Preferences/com.jetbrains.PhpStorm.plist',
-                 ]
+  uninstall delete: '/usr/local/bin/pstorm'
 
-  caveats do
-    depends_on_java
-  end
+  zap delete: [
+                "~/.PhpStorm#{version.major_minor}",
+                "~/Library/Preferences/PhpStorm#{version.major_minor}",
+                "~/Library/Caches/PhpStorm#{version.major_minor}",
+                "~/Library/Logs/PhpStorm#{version.major_minor}",
+                "~/Library/Application Support/PhpStorm#{version.major_minor}",
+                # TODO: expand/glob for '~/Library/Preferences/jetbrains.phpstorm.*.plist',
+              ]
 end

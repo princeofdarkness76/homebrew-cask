@@ -1,19 +1,22 @@
 cask 'araxis-merge' do
-  version '2014.4581'
+  version '2016.4750'
 
   name 'Araxis Merge'
   if MacOS.release <= :mavericks
-    sha256 '4029be850bbffd8a46b30b7701434474c33e07e678848ae47e094ddba04668d2'
+    sha256 '9f3f4d3ba4931f69f75fd315e6823b19c5bb3938a5734b59b6aa92ec715ed00f'
     url "http://www.araxis.com/download/Merge#{version}-OSX10.9.dmg"
-  else
-    sha256 '483314bfe464f8954aeb0ddc839dfcab061d7d070bdbbe63b28934a54436663d'
+  elsif MacOS.release <= :yosemite
+    sha256 '18208f885f645347ae5956a81aa1d1ef78fbc5dd5f5da0ed5a02efab004293cf'
     url "http://www.araxis.com/download/Merge#{version}-OSX10.10.dmg"
+  else
+    sha256 'efd2ec4fa98988022eaedda40c12fb7abd5d1720d8422f25ff279cd8daac8279'
+    url "http://www.araxis.com/download/Merge#{version}-OSX10.11.dmg"
   end
 
   homepage 'http://www.araxis.com/merge'
   license :commercial
 
-  depends_on :macos => '>= :mavericks'
+  depends_on macos: '>= :mavericks'
 
   app 'Araxis Merge.app'
   binary 'Utilities/araxisgitdiff'
@@ -28,10 +31,10 @@ cask 'araxis-merge' do
   binary 'Utilities/araxisp4winmrg'
   binary 'Utilities/araxissvnmerge'
 
-  zap :delete => [
-                   '~/Library/Preferences/com.araxis.merge.LSSharedFileList.plist',
-                   '~/Library/Preferences/com.araxis.merge.plist',
-                 ]
+  zap delete: [
+                '~/Library/Preferences/com.araxis.merge.LSSharedFileList.plist',
+                '~/Library/Preferences/com.araxis.merge.plist',
+              ]
 
   caveats <<-EOS.undent
     For instructions to integrate Araxis Merge with Finder or other applications,

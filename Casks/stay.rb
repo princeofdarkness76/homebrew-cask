@@ -4,7 +4,7 @@ cask 'stay' do
 
   url "https://cordlessdog.com/stay/versions/Stay%20#{version}.zip"
   appcast 'https://cordlessdog.com/stay/appcast.xml',
-          :sha256 => '92fa8a5630cbeb21bb108721dd8d28b0da58c3e4634e390161a557b281493cf0'
+          checkpoint: 'dd47f901301581842a3ed3754de4285c41453b43529391421073e805f80aed96'
   name 'Stay'
   homepage 'https://cordlessdog.com/stay/'
   license :commercial

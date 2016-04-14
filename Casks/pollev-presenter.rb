@@ -1,11 +1,11 @@
 cask 'pollev-presenter' do
-  version '2.6.9'
-  sha256 'b250f3e614a061fd7613aa739a4c44533d9e783cbee7f301a11ab5c8930d9820'
+  version '2.7.4'
+  sha256 '42ba710bbfb6d2056acab31b1d6c288e925386c260edcf6e73ad9bb38e0bb8bd'
 
-  # amazonaws.com is the official download host per the appcast feed
-  url "https://polleverywhere-app.s3.amazonaws.com/mac-beta/v#{version}/pollev.dmg"
+  # amazonaws.com/polleverywhere-app was verified as official when first introduced to the cask
+  url 'https://s3.amazonaws.com/polleverywhere-app/mac-beta/pollev.dmg'
   appcast 'https://polleverywhere-app.s3.amazonaws.com/mac-beta/appcast.xml',
-          :sha256 => 'bac5223a873f18bff951df7e9e03ef192c0ff6334b38c9553f77c4e32c8e3108'
+          checkpoint: '7e9db59d272d93aa4a2dac504974c353fd0e760a5de92fa07c218ab47d3d821d'
   name 'PollEv Presenter'
   homepage 'https://www.polleverywhere.com/'
   license :gratis

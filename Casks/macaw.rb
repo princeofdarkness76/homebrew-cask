@@ -1,13 +1,17 @@
 cask 'macaw' do
-  version '1.5.15'
-  sha256 '678462f77c32afb203814c67cd69e6b56f0ed16a71ce264848afdb296c828059'
+  version '1.6.1'
+  sha256 '11aac6e57bbb71fb9ea5e3e3dfc5d991e36e266635df0c0c95e52efeb8a5e942'
 
   url "http://download.macaw.co/#{version}/Macaw#{version}.dmg"
   appcast 'http://download.macaw.co/appcast.xml',
-          :sha256 => '89c8f4d9ac4f0dcbf29893de75bdf1bb0c60220280c60e4547d62a8b43300112'
+          checkpoint: '965a05c732a828d55db7d563cb01d1f746c425e3c672233ba3f67ec998e7bf2e'
   name 'Macaw'
   homepage 'http://macaw.co/'
   license :commercial
 
   app 'Macaw.app'
+
+  caveats do
+    discontinued
+  end
 end

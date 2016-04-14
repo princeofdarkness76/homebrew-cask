@@ -1,10 +1,10 @@
 cask 'retroarch' do
-  version '1.2.2'
-  sha256 'fb5bb649edb2be67ca106166be27e3c4be8fe0d84169a4af1ae6e00ad3b3e784'
+  version '1.3.3'
+  sha256 'd3b1ac29815d07477f44275481b7f5e6bdf7f7dbff394c490b7fa93d653cc1d0'
 
-  url "https://buildbot.libretro.com/stable/#{version}/osx-x86_64/RetroArch-OSX10.7-x86_64-v#{version}.zip"
+  url "https://buildbot.libretro.com/stable/#{version}/apple/osx/x86_64/RetroArch.dmg"
   name 'RetroArch'
-  homepage 'https://www.libretro.com/'
+  homepage 'http://libretro.com'
   license :gpl
 
   app 'RetroArch.app'

@@ -1,14 +1,14 @@
 cask 'virtualbox-extension-pack' do
-  version '5.0.12-104815'
-  sha256 'ac1bc8452b7fdf183325272149e9f18b9810cc07adf18e48755385a9cd1b236d'
+  version '5.0.16-105871'
+  sha256 'c234e158c49f4f92c38e41918c117d756a81236ff1030a896e44faf88284ecc7'
 
   url "http://download.virtualbox.org/virtualbox/#{version.sub(%r{-.*}, '')}/Oracle_VM_VirtualBox_Extension_Pack-#{version}.vbox-extpack"
   name 'Oracle VirtualBox Extension Pack'
   homepage 'https://www.virtualbox.org'
   license :closed
 
-  depends_on :cask => 'virtualbox'
-  container :type => :naked
+  depends_on cask: 'virtualbox'
+  container type: :naked
 
   stage_only true
 

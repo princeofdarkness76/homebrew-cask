@@ -1,13 +1,13 @@
 cask 'extrabuildphase' do
-  version '0.3.2'
-  sha256 'a2181e7bdc78851f336752091ae30b23ede348f06dc6d3ab9980725e2cacbf64'
+  version '0.3.4'
+  sha256 'b2d6909417e1c9c7b96f81bde136565708544dda77aa26e06892620c44160372'
 
   url "https://github.com/norio-nomura/ExtraBuildPhase/releases/download/#{version}/ExtraBuildPhase.xcplugin-#{version}.zip"
   appcast 'https://github.com/norio-nomura/ExtraBuildPhase/releases.atom',
-          :sha256 => '7b9d29c0defc4b1ee1ac0099372ee35f67599a04dfc1dd0339b37fa06adc87be'
+          checkpoint: 'a4f1693dce4a7f70ac49fd8f435fc3f92e51a5e4b89027f3a5174c8341dc1445'
   name 'ExtraBuildPhase'
   homepage 'https://github.com/norio-nomura/ExtraBuildPhase'
   license :mit
 
-  artifact 'ExtraBuildPhase.xcplugin', :target => "#{ENV['HOME']}/Library/Application Support/Developer/Shared/Xcode/Plug-ins/ExtraBuildPhase.xcplugin"
+  artifact 'ExtraBuildPhase.xcplugin', target: "#{ENV['HOME']}/Library/Application Support/Developer/Shared/Xcode/Plug-ins/ExtraBuildPhase.xcplugin"
 end

@@ -3,27 +3,33 @@ cask 'sourcetree' do
     version '1.8.1'
     sha256 '37a42f2d83940cc7e1fbd573a70c3c74a44134c956ac3305f6b153935dc01b80'
   else
-    version '2.1'
-    sha256 '5c50f2ae7d9a4c26af6f1af4b3d30f81a4bfcf6b1386bf8ede73947c1447e305'
+    version '2.2.4'
+    sha256 '068b594ca1612a08c575545baa363741a1024b67e3d3a86747c84f52a0c4e032'
   end
 
-  # atlassian.com is the official download host per the vendor homepage
+  # atlassian.com was verified as official when first introduced to the cask
   url "https://downloads.atlassian.com/software/sourcetree/SourceTree_#{version}.dmg"
   appcast 'https://www.sourcetreeapp.com/update/SparkleAppcast.xml',
-          :sha256 => 'bad598541c1d7d6cdd934542d55d1f3ce85550e8e76bd6b59b40aecdf85e3c76'
+          checkpoint: '281824c0f503c7db534e0ba7684606ab2e3810787154f91096bcf203d344596b'
   name 'Atlassian SourceTree'
   homepage 'https://www.sourcetreeapp.com/'
   license :gratis
 
+  auto_updates true
+
   app 'SourceTree.app'
   binary 'SourceTree.app/Contents/Resources/stree'
 
-  uninstall :launchctl => 'com.atlassian.SourceTreePrivilegedHelper2'
+  postflight do
+    suppress_move_to_applications
+  end
 
-  zap :delete => [
-                   '~/Library/Application Support/SourceTree',
-                   '~/Library/Caches/com.torusknot.SourceTreeNotMAS',
-                 ]
+  uninstall launchctl: 'com.atlassian.SourceTreePrivilegedHelper2'
+
+  zap delete: [
+                '~/Library/Application Support/SourceTree',
+                '~/Library/Caches/com.torusknot.SourceTreeNotMAS',
+              ]
 
   caveats do
     files_in_usr_local

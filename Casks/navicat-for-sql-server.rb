@@ -1,6 +1,6 @@
 cask 'navicat-for-sql-server' do
-  version '11.2.6'
-  sha256 '443681fd23c137cbe97e7aa84e74873a561fcaf3b8f8a5fec13b4d16d91dd94c'
+  version '11.2.9'
+  sha256 'd18c55cae54301899ca627446fba7f2d7075fb8b0de0292fde69426f47f62f64'
 
   url "http://download.navicat.com/download/navicat#{version.major_minor.no_dots}_sqlserver_en.dmg"
   name 'Navicat for SQL Server'

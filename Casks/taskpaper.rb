@@ -1,11 +1,11 @@
 cask 'taskpaper' do
-  version '2.3.2'
-  sha256 'faaaef9c9b6398aa7beb6782b1704ccc74b11e251f428d6b921248235afc3a06'
+  version '3.1'
+  sha256 '91b28efa694ab81d2b7c12082c1225d6a3095c986a540bb98df1f4f619b85687'
 
   # amazonaws.com is the official download host per the vendor homepage
-  url "https://taskpaper.s3.amazonaws.com/TaskPaper-#{version}.dmg"
-  appcast 'http://www.hogbaysoftware.com/products/taskpaper/releases.rss',
-          :sha256 => '48eb0cde463052b282cebb7fbc38a764152acfa4bef79b798bd9076ac2ca5539'
+  url "https://taskpaper.s3.amazonaws.com/assets/app/TaskPaper-#{version}.dmg"
+  appcast 'https://taskpaper.s3.amazonaws.com/TaskPaper.rss',
+          checkpoint: '94e5c68e5a2b997da3086e2fb3b7dff9a09e1bd0602776a37c51b05ef6e63fe9'
   name 'TaskPaper'
   homepage 'http://www.hogbaysoftware.com/products/taskpaper'
   license :commercial

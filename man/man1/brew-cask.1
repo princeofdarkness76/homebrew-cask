@@ -1,7 +1,7 @@
 .\" generated with Ronn/v0.7.3
 .\" http://github.com/rtomayko/ronn/tree/0.7.3
 .
-.TH "HOMEBREW\-CASK" "1" "January 2016" "Homebrew-cask" "brew-cask"
+.TH "HOMEBREW\-CASK" "1" "February 2016" "Homebrew-cask" "brew-cask"
 .
 .SH "NAME"
 \fBhomebrew\-cask\fR \- A friendly binary installer for OS X
@@ -94,6 +94,10 @@ Display all Casks available for install\.
 .TP
 \fBsearch\fR or \fB\-S\fR \fItext\fR | /\fIregexp\fR/
 Perform a substring search of known Cask tokens for \fItext\fR\. If the text is delimited by slashes, it is interpreted as a Ruby regular expression\.
+.
+.TP
+\fBstyle\fR [\-\-fix] [ \fItoken\fR \.\.\. ]
+Check the given Casks for correct style using RuboCop Cask \fIhttps://github\.com/caskroom/rubocop\-cask\fR\. If no tokens are given on the command line, all Casks are checked\. With \fB\-\-fix\fR, auto\-correct any style errors if possible\.
 .
 .TP
 \fBuninstall [\-\-force]\fR or \fBrm\fR or \fBremove\fR \fItoken\fR [ \fItoken\fR \.\.\. ]
@@ -189,11 +193,11 @@ Target location for Screen Saver links\. The default value is \fB~/Library/Scree
 .
 .TP
 \fB\-\-no\-binaries\fR
-Do not link “helper” executables to \fB/usr/local/bin\fR\.
+Do not link "helper" executables to \fB/usr/local/bin\fR\.
 .
 .TP
 \fB\-\-binarydir=<path>\fR
-Target location for “helper” executable links\. The default value is \fB/usr/local/bin\fR\.
+Target location for "helper" executable links\. The default value is \fB/usr/local/bin\fR\.
 .
 .TP
 \fB\-\-debug\fR

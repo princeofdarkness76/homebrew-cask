@@ -6,13 +6,13 @@ cask 'sente' do
     version '6.7.8.11870'
     sha256 'f75bb32db9f0dbfa3d5dbf7639371b5892f6071e740de38e768a203899bb4b5b'
   else
-    version '6.7.9.11901'
-    sha256 'e7ce17c006598b446952e92ae4fbfb784ea029d61bb7c8a4abad6db68990c901'
+    version '6.7.9.11905'
+    sha256 '7ba39f82155b7bd7a4b76e8c8edd8a52e84a2b64b5cd823f762b9236318169f8'
   end
 
   url "https://www.thirdstreetsoftware.com/downloads/Sente-#{version}.zip"
   appcast 'https://www.thirdstreetsoftware.com/rss/Sente65.xml',
-          :sha256 => 'd58781bdcb37e3734f3bc270f900c3f48458a48cb0e20ae8b027028dba3ac2f0'
+          checkpoint: 'aaabfb0506ef8ffa3e825478a5a7bc643ab9098f6984ce56d1c99a2bd7a00808'
   name 'Sente'
   homepage 'https://www.thirdstreetsoftware.com'
   license :freemium

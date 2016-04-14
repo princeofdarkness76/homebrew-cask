@@ -8,8 +8,8 @@ cask 'omnifocus' do
     sha256 '3282eb7e41ec2638f68a92a6509eddd96a96c39b65b954dcedcc4e62289f22a9'
     url "https://downloads.omnigroup.com/software/MacOSX/10.9/OmniFocus-#{version}.dmg"
   else
-    version '2.4'
-    sha256 'b70adc36277583e8a534099a8c90f2b0cbf512b577da24246b529b3028ba0095'
+    version '2.5'
+    sha256 '805eececbc87ed6ce39529494bcdcf88d4d086d9bd0ead6433cbd3a65bfbb70d'
     url "https://downloads.omnigroup.com/software/MacOSX/10.10/OmniFocus-#{version}.dmg"
   end
 
@@ -20,19 +20,19 @@ cask 'omnifocus' do
   app 'OmniFocus.app'
 
   if MacOS.release <= :mountain_lion
-    zap :delete => [
-                     '~/Library/Application Support/OmniFocus/Plug-Ins',
-                     '~/Library/Application Support/OmniFocus/Themes',
-                     '~/Library/Preferences/com.omnigroup.OmniFocus.plist',
-                   ]
+    zap delete: [
+                  '~/Library/Application Support/OmniFocus/Plug-Ins',
+                  '~/Library/Application Support/OmniFocus/Themes',
+                  '~/Library/Preferences/com.omnigroup.OmniFocus.plist',
+                ]
   else
-    zap :delete => [
-                     '~/Library/containers/com.omnigroup.omnifocus2',
-                     '~/Library/Preferences/com.omnigroup.OmniFocus2.LSSharedFileList.plist',
-                     '~/Library/Preferences/com.omnigroup.OmniSoftwareUpdate.plist',
-                     '~/Library/Caches/Metadata/com.omnigroup.OmniFocus2',
-                     '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.omnigroup.omnifocus2.sfl',
-                     '~/Library/Group Containers/34YW5XSRB7.com.omnigroup.OmniFocus',
-                   ]
+    zap delete: [
+                  '~/Library/containers/com.omnigroup.omnifocus2',
+                  '~/Library/Preferences/com.omnigroup.OmniFocus2.LSSharedFileList.plist',
+                  '~/Library/Preferences/com.omnigroup.OmniSoftwareUpdate.plist',
+                  '~/Library/Caches/Metadata/com.omnigroup.OmniFocus2',
+                  '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.omnigroup.omnifocus2.sfl',
+                  '~/Library/Group Containers/34YW5XSRB7.com.omnigroup.OmniFocus',
+                ]
   end
 end

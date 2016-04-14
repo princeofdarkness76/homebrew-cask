@@ -1,21 +1,21 @@
 cask 'macvim' do
-  version '7.4.89'
-  sha256 '779928de48eabc3f90a830e441affb0f28e370881737d2b3f4bf173c41a1798f'
+  version '7.4.101'
+  sha256 'daecfbc7f060ae4916d2da78e4592f3468a98f3598e34314bffa9daab1c63848'
 
-  url "https://github.com/macvim-dev/macvim/releases/download/snapshot-#{version.patch}/MacVim-#{version.major_minor}.dmg"
+  url "https://github.com/macvim-dev/macvim/releases/download/snapshot-#{version.patch}/MacVim.dmg"
   appcast 'https://github.com/macvim-dev/macvim/releases.atom',
-          :sha256 => 'f3d72f38f82dc43ee72a8ad9a6c72b5ba67a7a98425a59869cb50a67ee62e306'
+          checkpoint: '31489a1a1cc86637be6ffa7efe535e9679383a49eeacb54dc38870941f8bcd56'
   name 'MacVim'
   homepage 'https://github.com/macvim-dev/macvim'
   license :oss
 
-  conflicts_with :formula => 'macvim'
+  conflicts_with formula: 'macvim'
 
   app 'MacVim.app'
   binary 'mvim'
 
-  zap :delete => [
-                   '~/Library/Preferences/org.vim.MacVim.LSSharedFileList.plist',
-                   '~/Library/Preferences/org.vim.MacVim.plist',
-                 ]
+  zap delete: [
+                '~/Library/Preferences/org.vim.MacVim.LSSharedFileList.plist',
+                '~/Library/Preferences/org.vim.MacVim.plist',
+              ]
 end

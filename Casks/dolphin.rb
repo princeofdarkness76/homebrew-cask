@@ -1,6 +1,6 @@
 cask 'dolphin' do
-  version '4.0-8560'
-  sha256 '8ce5cf2d750e18b826746c3147ce3b4284fd39cf3d274b25389052e3eea61157'
+  version '4.0-9202'
+  sha256 'f16df059d8932be6d9045e38511aa73528344c6d077e63b2f33a89a400a220b6'
 
   url "https://dl.dolphin-emu.org/builds/dolphin-master-#{version}.dmg"
   name 'Dolphin'
@@ -9,8 +9,8 @@ cask 'dolphin' do
 
   app 'Dolphin.app'
 
-  zap :delete => [
-                   '~/Library/Application Support/Dolphin',
-                   '~/Library/Preferences/org.dolphin-emu.dolphin.plist',
-                 ]
+  zap delete: [
+                '~/Library/Application Support/Dolphin',
+                '~/Library/Preferences/org.dolphin-emu.dolphin.plist',
+              ]
 end

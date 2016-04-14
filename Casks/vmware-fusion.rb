@@ -10,21 +10,40 @@ cask 'vmware-fusion' do
   auto_updates true
 
   app 'VMware Fusion.app'
+  binary 'VMware Fusion.app/Contents/Library/vmnet-bridge'
   binary 'VMware Fusion.app/Contents/Library/vmnet-cfgcli'
   binary 'VMware Fusion.app/Contents/Library/vmnet-cli'
+  binary 'VMware Fusion.app/Contents/Library/vmnet-dhcpd'
+  binary 'VMware Fusion.app/Contents/Library/vmnet-natd'
+  binary 'VMware Fusion.app/Contents/Library/vmnet-netifup'
+  binary 'VMware Fusion.app/Contents/Library/vmnet-sniffer'
   binary 'VMware Fusion.app/Contents/Library/vmrun'
+  binary 'VMware Fusion.app/Contents/Library/vmss2core'
+  binary 'VMware Fusion.app/Contents/Library/vmware-aewp'
+  binary 'VMware Fusion.app/Contents/Library/vmware-authd'
+  binary 'VMware Fusion.app/Contents/Library/vmware-cloneBootCamp'
+  binary 'VMware Fusion.app/Contents/Library/vmware-id'
+  binary 'VMware Fusion.app/Contents/Library/vmware-ntfs'
+  binary 'VMware Fusion.app/Contents/Library/vmware-rawdiskAuthTool'
+  binary 'VMware Fusion.app/Contents/Library/vmware-rawdiskCreator'
+  binary 'VMware Fusion.app/Contents/Library/vmware-remotemks'
+  binary 'VMware Fusion.app/Contents/Library/vmware-usbarbitrator'
   binary 'VMware Fusion.app/Contents/Library/vmware-vdiskmanager'
+  binary 'VMware Fusion.app/Contents/Library/vmware-vmdkserver'
+  binary 'VMware Fusion.app/Contents/Library/vmware-vmx'
+  binary 'VMware Fusion.app/Contents/Library/vmware-vmx-debug'
+  binary 'VMware Fusion.app/Contents/Library/vmware-vmx-stats'
   binary 'VMware Fusion.app/Contents/Library/VMware OVF Tool/ovftool'
 
   uninstall_preflight do
     set_ownership "#{staged_path}/VMware Fusion.app"
   end
 
-  zap :delete => [
-                   # note: '~/Library/Application Support/VMware Fusion' is not safe
-                   # to delete. In older versions, VM images were located there.
-                   '~/Library/Caches/com.vmware.fusion',
-                   '~/Library/Logs/VMware',
-                   '~/Library/Logs/VMware Fusion',
-                 ]
+  zap delete: [
+                # note: '~/Library/Application Support/VMware Fusion' is not safe
+                # to delete. In older versions, VM images were located there.
+                '~/Library/Caches/com.vmware.fusion',
+                '~/Library/Logs/VMware',
+                '~/Library/Logs/VMware Fusion',
+              ]
 end

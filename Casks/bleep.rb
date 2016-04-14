@@ -1,21 +1,21 @@
 cask 'bleep' do
-  version '1.1.0'
-  sha256 '7b28ab86de771e5b446769e385a7c5f689d3711a880f532fdd5db664ba46723c'
+  version '1.1.4'
+  sha256 'fde60910518e2464ad486272b4eb6c6e766e5ac6a03c0a1fc9326c249c1218d5'
 
-  # utorrent.com is the official download host per the vendor homepage
+  # utorrent.com was verified as official when first introduced to the cask
   url 'https://download-new.utorrent.com/endpoint/bleep/os/osx/track/stable/'
   appcast 'https://bleeposx.bittorrent.com/appcast.xml',
-          :sha256 => '1a1f1b970294837f0f43752bfab8c15fb0e2a763910d2e21f5c4b98b415ffa39'
+          checkpoint: 'e4ee8737fb6d35afc019f356c4d624e9ff501c3d945ffe57d32302696e371c27'
   name 'BitTorrent Bleep'
   homepage 'http://www.bleep.pm/'
   license :gratis
 
   app 'Bleep.app'
 
-  zap :delete => [
-                   '~/Library/Application Support/Bleep',
-                   '~/Library/Caches/com.bittorrent.bleep.osx',
-                   '~/Library/Preferences/com.bittorrent.bleep.osx.plist',
-                   '~/Library/Saved Application State/com.bittorrent.bleep.osx.savedState',
-                 ]
+  zap delete: [
+                '~/Library/Application Support/Bleep',
+                '~/Library/Caches/com.bittorrent.bleep.osx',
+                '~/Library/Preferences/com.bittorrent.bleep.osx.plist',
+                '~/Library/Saved Application State/com.bittorrent.bleep.osx.savedState',
+              ]
 end
